@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>music mixer</title>
+    <style>
+        body {
+            background: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="cv"></canvas>
+    <p id="q"></p>
+    <p id="a"></p>
+
+    <script>
+        var q = document.getElementById("q");
+        var a = document.getElementById("a");
+
+        var qList = [
+            "who is game creator?",
+            "what is music mixer?"
+        ];
+
+        var aList = [
+            "A poor, tortured, and abused soul.",
+            "the game to make nice a bop music"
+        ];
+
+        var choose = Math.floor(qList.length * Math.random());
+        q.textContent = qList[choose];
+        a.textContent = aList[choose];
+
+    </script>
+</body>
+</html>
