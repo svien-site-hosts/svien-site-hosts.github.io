@@ -467,6 +467,7 @@ function introScreen() {
 
 
 	c.fillText("wait", 200, 200);
+	c.fillText("better strong connection", 200, 230);
 
 	var imgKeys = Object.keys(img);
 	imgKeys.forEach((key, i) => {
