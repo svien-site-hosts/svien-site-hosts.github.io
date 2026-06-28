@@ -2,38 +2,72 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <title>music mixer</title>
-    <style>
-        body {
-            background: lightgray;
-        }
-    </style>
+	<meta charset="utf-8" />
+	<title>miusic mixer</title>
+	<style>
+		body {
+			background: lightgray;
+			margin: 10px;
+		}
+		#cvcont {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+		}
+		#cv {
+			width: calc(100vw - 20px);
+			height: calc(100vh - 20px);
+			filter:blur(1.5px);
+			image-rendering: pixelated;
+		}
+		p {
+			margin: 10px 10px;
+		}
+	</style>
 </head>
 <body>
-    <canvas id="cv"></canvas>
-    <p id="q"></p>
-    <p id="a"></p>
+	<div id="cvcont">
+		<canvas id="cv" width="700" height="400"></canvas>
+	</div>
+	<p id="q"></p>
+	<p id="a"></p>
 
-    <script src="game.js"></script>
-    <script>
-        var q = document.getElementById("q");
-        var a = document.getElementById("a");
+	<script src="game.js"></script>
+	<script>
+		var q = document.getElementById("q");
+		var a = document.getElementById("a");
+		var screen = document.getElementById("cv");
 
-        var qList = [
-            "who is game creator?",
-            "what is music mixer?"
-        ];
+		var qList = [
+			"what is muisc mixer?",
+			"is nessterhee alive?",
+			"when made?",
+			"is music sond good?",
+			"who is game creator?",
+		];
 
-        var aList = [
-            "A poor, tortured, and abused soul.",
-            "the game to make nice a bop music"
-        ];
+		var aList = [
+			"the game to make nice a bop music miusic",
+			"no. you cannot find him anywhere. he cannot be neither here or somewhere away from you. give up looking for him. something is waiting for you if you do.",
+			"06 23 26",
+			"obvius. not daunting us.",
+			"A poor, tortured, and abused soul.",
+		];
 
-        var choose = Math.floor(qList.length * Math.random());
-        q.textContent = qList[choose];
-        a.textContent = aList[choose];
+		var choose = qList.length - 1;
+		var cond = true;
+		//var chance = 
+		while (cond) {
+			choose = Math.floor(qList.length * Math.random());
+			cond = (choose >= qList.length - 1);
+		}
+		if (Math.random() < 0.05) {
+			choose = qList.length - 1;
+		}
 
-    </script>
+		q.textContent = qList[choose];
+		a.textContent = aList[choose];
+
+	</script>
 </body>
 </html>
